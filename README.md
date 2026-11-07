@@ -1,10 +1,10 @@
 # HiBy R1 custom firmware: Hiby Pro 2
 
-**Page and guide: https://gtalex994.github.io/hiby-pro-2/**
+**Page and guide: https://gtalex994.github.io/hiby-r1-pro-2/**
 
 Unofficial custom firmware (a firmware mod) for the HiBy R1 music player. Swipe the album cover to change songs, tap to pause, hold for lyrics, with a taller cover, new home-screen icons and rounded dialog buttons.
 
-Download `r1.upt` from [Releases](https://github.com/GtAlex994/hiby-pro-2/releases/latest). The page has the install steps, how to go back to official firmware, and what has been tested.
+Download `r1.upt` from [Releases](https://github.com/GtAlex994/hiby-r1-pro-2/releases/latest). The page has the install steps, how to go back to official firmware, and what has been tested.
 
 This is an independent hobby project, not made, supported or endorsed by HiBy. "Hiby Pro 2" is the project's name, not a HiBy product. The firmware includes HiBy's own software. It is provided as is, with no warranty: flash it at your own risk, and only on a HiBy R1.
 
