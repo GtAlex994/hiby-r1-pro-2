@@ -4,271 +4,71 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Hiby Pro 2: unofficial firmware mod for the HiBy R1</title>
-<meta name="description" content="Unofficial firmware for the HiBy R1. Swipe the album cover to change songs, get a taller cover and new home-screen icons. Download, install and usage guide.">
+<meta name="description" content="Unofficial firmware for the HiBy R1, based on Hiby-R1-Mod by bidhata. Swipe the album cover to change songs, with a bigger cover and new icons.">
 <meta name="theme-color" content="#000000">
 <link rel="preconnect" href="https://api.fontshare.com">
 <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
 <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-<script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
-<main class="board">
+<main class="page">
 
-<!-- First screen -->
 <section class="hero" aria-labelledby="page-title">
   <div class="tile name"><h1 id="page-title">Hiby Pro 2</h1></div>
-  <p class="tile tag">An unofficial firmware mod for the HiBy R1</p>
-  <nav class="links" aria-label="On this page">
-    <a class="tile" href="#try">Try the gestures</a>
-    <a class="tile" href="#new">What is new</a>
-    <a class="tile" href="#install">Install it</a>
-    <a class="tile" href="#questions">Questions and recovery</a>
-  </nav>
-  <div class="rail-left">
-    <div class="tile mini-cover"><img src="assets/cover-0.png" width="480" height="635" alt=""></div>
-    <ul class="tile facts">
-      <li>HiBy R1 only</li>
-      <li>Built on firmware 1.8 b2</li>
-      <li>Installs from an SD card</li>
-      <li>No special tools needed</li>
-      <li>Unofficial, not from HiBy</li>
-    </ul>
-  </div>
-  <div class="centre">
-    <div class="tile home-grid" data-ui>
-      <figure><img src="assets/music.png" width="140" height="140" alt=""><figcaption>Music</figcaption></figure>
-      <figure><img src="assets/stream_media.png" width="140" height="140" alt=""><figcaption>Stream media</figcaption></figure>
-      <figure><img src="assets/wireless.png" width="140" height="140" alt=""><figcaption>Wireless</figcaption></figure>
-      <figure><img src="assets/book.png" width="140" height="140" alt=""><figcaption>Books</figcaption></figure>
-      <figure><img src="assets/games.png" width="140" height="140" alt=""><figcaption>Games</figcaption></figure>
-      <figure><img src="assets/sys_set.png" width="140" height="140" alt=""><figcaption>System</figcaption></figure>
-    </div>
-    <p class="tile statement">Swipe the album cover to change songs, tap to pause, hold for lyrics. A bigger cover and cleaner icons come with it.</p>
-  </div>
-  <div class="rail-right">
-    <p class="tile run-1">Swipe to skip</p>
-    <p class="tile run-2">Tap to pause</p>
-    <p class="tile run-3">Hold for lyrics</p>
-    <p class="tile run-4">Game Boy included</p>
-    <a class="tile action" href="https://github.com/GtAlex994/hiby-pro-2/releases/latest/download/r1.upt">Download r1.upt<span>42.3 MB</span></a>
+  <p class="tile intro">An unofficial firmware mod for the HiBy R1. Swipe the album cover to change songs, with a bigger cover and cleaner icons.</p>
+  <a class="tile action" href="https://github.com/GtAlex994/hiby-pro-2/releases/latest/download/r1.upt">Download r1.upt<span>Version 1.0, 42.3 MB</span></a>
+  <div class="icons">
+    <img src="assets/music.png" width="140" height="140" alt="Music icon">
+    <img src="assets/stream_media.png" width="140" height="140" alt="Stream media icon">
+    <img src="assets/wireless.png" width="140" height="140" alt="Wireless icon">
+    <img src="assets/book.png" width="140" height="140" alt="Books icon">
+    <img src="assets/games.png" width="140" height="140" alt="Games icon">
+    <img src="assets/sys_set.png" width="140" height="140" alt="System icon">
   </div>
 </section>
 
-<!-- The live thing -->
-<section class="try" id="try" aria-labelledby="try-title">
-  <div class="try-intro reveal">
-    <h2 id="try-title">Try the gestures</h2>
-    <p>This is how the album cover behaves on the player. Swipe it, tap it, or press and hold it, with a mouse or a finger. The songs below are placeholders.</p>
-  </div>
-  <div class="panel reveal">
-    <div class="np" data-ui id="np">
-      <div class="np-cover" id="cover" role="group" aria-label="Album cover demo. Use the buttons beside it with a keyboard.">
-        <img class="np-art" id="art" src="assets/cover-0.png" width="480" height="635" alt="Placeholder album cover" draggable="false">
-        <div class="np-lyrics" id="lyrics" hidden>
-          <p>Placeholder lyric line</p><p>Placeholder lyric line</p><p class="now">The current line is white</p><p>Placeholder lyric line</p><p>Placeholder lyric line</p><p>Tap to go back to the cover</p>
-        </div>
-        <div class="np-bar" aria-hidden="true"><span class="back"></span><span class="right"><span class="heart"></span><span class="dots"></span></span></div>
-        <div class="np-paused" id="paused" hidden>Paused</div>
-      </div>
-      <div class="np-info">
-        <strong id="song">Placeholder song one</strong>
-        <span id="artist">Placeholder artist</span>
-        <div class="np-progress" aria-hidden="true"><i id="progress"></i></div>
-        <div class="np-times" aria-hidden="true"><span id="elapsed">1:23</span><span id="count">1/4</span><span>3:45</span></div>
-      </div>
-    </div>
-    <div class="controls">
-      <p class="result" id="result" aria-live="polite">Your last gesture shows here.</p>
-      <button type="button" data-do="next"><span>Swipe right to left</span><b>Next song</b></button>
-      <button type="button" data-do="prev"><span>Swipe left to right</span><b>Previous song</b></button>
-      <button type="button" data-do="toggle"><span>Tap</span><b>Pause or resume</b></button>
-      <button type="button" data-do="lyrics"><span>Press and hold</span><b>Show lyrics</b></button>
-      <p class="hint">On the player, the gestures work on the cover of the Now Playing screen. Tap the lyrics to return to the cover. A swipe needs about 60 pixels of travel.</p>
-    </div>
-  </div>
+<section class="credit" id="credit" aria-labelledby="credit-title">
+  <h2 id="credit-title">Credit to bidhata</h2>
+  <p>This firmware is based on <a href="https://github.com/bidhata/Hiby-R1-Mod/tree/main">Hiby-R1-Mod by bidhata</a>. All credit goes to bidhata for the extra features that are not in HiBy's original firmware, including the Game Boy launcher. Hiby Pro 2 only adds the changes listed below.</p>
 </section>
 
-<!-- Features -->
-<section class="new" id="new" aria-labelledby="new-title">
-  <h2 id="new-title" class="reveal">What is new</h2>
-  <div class="cells">
-    <article class="cell reveal">
-      <div class="cell-text"><h3>Gestures on the cover</h3><p>Change songs, pause and open lyrics without any on-screen buttons. Your thumb stays on the artwork.</p></div>
-      <div class="frag frag-gestures" data-ui><img src="assets/cover-1.png" width="480" height="635" loading="lazy" alt=""><b>Swipe left: next</b><b>Swipe right: previous</b></div>
-    </article>
-    <article class="cell flip reveal">
-      <div class="frag frag-tall" data-ui><img src="assets/cover-2.png" width="480" height="635" loading="lazy" alt=""><i>480 x 635</i></div>
-      <div class="cell-text"><h3>A taller cover</h3><p>Artwork and lyrics grow from 480 x 480 to 480 x 635, about a third more picture. Song details fit in the bottom strip.</p></div>
-    </article>
-    <article class="cell reveal">
-      <div class="cell-text"><h3>Fewer controls in the way</h3><p>Previous, play and next are gone from the screen. The heart and the three-dot menu move to the top right.</p></div>
-      <div class="frag frag-bar" data-ui><img src="assets/cover-3.png" width="480" height="635" loading="lazy" alt=""><span class="back"></span><span class="right"><span class="heart"></span><span class="dots"></span></span></div>
-    </article>
-    <article class="cell flip reveal">
-      <div class="frag frag-icons" data-ui><img src="assets/music.png" width="140" height="140" alt="Music icon"><img src="assets/games.png" width="140" height="140" alt="Games icon"><img src="assets/sys_set.png" width="140" height="140" alt="System icon"></div>
-      <div class="cell-text"><h3>New home-screen icons</h3><p>Six plain line icons replace the stock colourful set, in both the light and the dark theme.</p></div>
-    </article>
-    <article class="cell reveal">
-      <div class="cell-text"><h3>Rounded dialog buttons</h3><p>Cancel and OK get rounded corners and room around them on every dialog that has them, firmware update included.</p></div>
-      <div class="frag frag-dialog" data-ui><span>Cancel</span><span class="yes">OK</span></div>
-    </article>
-    <article class="cell flip reveal">
-      <div class="frag frag-launcher" data-ui><span class="on">HIBY PLAYER</span><span>PALETTE: GREEN</span><span>Your game</span><span>FIRMWARE UPDATE (SD)</span></div>
-      <div class="cell-text"><h3>Game Boy, kept from the base</h3><p>The Game Boy and Game Boy Color launcher from the base firmware stays. It appears at every start.</p></div>
-    </article>
-  </div>
+<section class="row" id="new" aria-labelledby="new-title">
+  <h2 id="new-title">What is new</h2>
+  <dl class="list">
+    <div><dt>Swipe left or right</dt><dd>Next or previous song, on the album cover of the Now Playing screen.</dd></div>
+    <div><dt>Tap or press and hold</dt><dd>Tap to pause or resume. Hold to show lyrics, and tap them to go back.</dd></div>
+    <div><dt>A bigger cover</dt><dd>Artwork and lyrics grow to 480 x 635, and the on-screen play buttons are gone.</dd></div>
+    <div><dt>New icons and buttons</dt><dd>Plain line icons on the home screen, and rounded Cancel and OK buttons on dialogs.</dd></div>
+  </dl>
 </section>
 
-<div class="marquee" aria-hidden="true"><div class="marquee-track">
-  <span>Swipe left for next. Swipe right for previous. Tap to pause. Hold for lyrics.&nbsp;</span>
-  <span>Swipe left for next. Swipe right for previous. Tap to pause. Hold for lyrics.&nbsp;</span>
-</div></div>
-
-<!-- Install -->
-<section class="install" id="install" aria-labelledby="install-title">
-  <h2 id="install-title" class="reveal">Install it</h2>
-  <ol class="stages">
-    <li class="reveal"><div class="stage s1"><strong>Prepare</strong></div><p>Charge the player above 30%. Format your SD card as FAT32 or exFAT if it is new.</p></li>
-    <li class="reveal"><div class="stage s2"><strong>Copy</strong></div><p>Put <code>r1.upt</code> in the top folder of the SD card, not inside another folder, and insert the card.</p></li>
-    <li class="reveal"><div class="stage s3"><strong>Update</strong></div><p>On the player, open System, then Firmware update, then Via SD-card, and confirm. Do not power it off.</p></li>
-    <li class="reveal"><div class="stage s4"><strong>Start</strong></div><p>It restarts twice and shows the Game Boy launcher. Pick HIBY PLAYER, or wait 5 seconds.</p></li>
+<section class="row" id="install" aria-labelledby="install-title">
+  <h2 id="install-title">Install it</h2>
+  <ol class="list steps">
+    <li>Charge the player above 30% and copy anything you care about off it.</li>
+    <li>Put <code>r1.upt</code> in the top folder of the SD card, and insert the card.</li>
+    <li>On the player, open System, then Firmware update, then Via SD-card, and confirm. Do not power it off.</li>
+    <li>It restarts twice and shows the launcher. Pick HIBY PLAYER, or wait 5 seconds.</li>
   </ol>
-  <div class="verify reveal">
-    <div class="tile before">
-      <h3>Before you flash</h3>
-      <p>Flashing unofficial firmware can fail and may damage the device or lose data. Keep the official R1 firmware from HiBy on hand, and copy anything you care about off the player first.</p>
-    </div>
-    <div class="tile check">
-      <h3>Check the file</h3>
-      <p>A damaged download should not be flashed. On a computer, compare its SHA-256 with this one:</p>
-      <pre><code>7c22369498540d7dd255c27368751669e81dee575f3133c966024df960b6405c</code></pre>
-    </div>
-    <figure class="tile shot"><img src="assets/dialog-update.png" width="480" height="800" loading="lazy" alt="Preview of the firmware dialog with rounded Cancel and Download buttons"></figure>
-  </div>
 </section>
 
-<!-- Everyday use -->
-<section class="use" id="use" aria-labelledby="use-title">
-  <div class="use-head reveal">
-    <h2 id="use-title">Everyday use</h2>
-    <p>The launcher comes first at every start. Tap a row, or move with the volume keys and pick with Next Track. It starts the music player after 5 idle seconds.</p>
-  </div>
-  <div class="tile gb reveal">
-    <h3>Play Game Boy games</h3>
-    <p>Make a folder called <code>games</code> in the top level of the SD card and copy your own <code>.gb</code> or <code>.gbc</code> files into it. They appear in the launcher. Saves are written next to each game. Power quits back to the menu. No games are included.</p>
-    <table>
-      <caption>In-game controls</caption>
-      <tbody>
-        <tr><th scope="row">Volume up and down</th><td>D-pad up and down</td></tr>
-        <tr><th scope="row">Next Track</th><td>A button</td></tr>
-        <tr><th scope="row">On-screen pad</th><td>D-pad, A, B, Start, Select</td></tr>
-      </tbody>
-    </table>
-  </div>
-  <div class="tile tools reveal">
-    <h3>Launcher tools</h3>
-    <dl>
-      <dt>Palette</dt><dd>Cycles the shades used by original Game Boy games: green, grey, pocket, amber.</dd>
-      <dt>Firmware update (SD)</dt><dd>Restarts into the same SD-card updater, useful for going back to official firmware.</dd>
-      <dt>Strip file art and album art</dt><dd>Delete artwork from your music files or SD card. This cannot be undone.</dd>
-      <dt>Factory reset</dt><dd>Erases the data on the device after a confirmation.</dd>
-    </dl>
-  </div>
+<section class="row" id="know" aria-labelledby="know-title">
+  <h2 id="know-title">Good to know</h2>
+  <dl class="list">
+    <div><dt>Flash at your own risk</dt><dd>Unofficial firmware can fail, damage the device or lose data. It is for the HiBy R1 only.</dd></div>
+    <div><dt>Going back</dt><dd>Put the official R1 firmware from HiBy on the SD card and run the same update, from System or from Firmware update (SD) in the launcher.</dd></div>
+    <div><dt>Testing so far</dt><dd>Swipes, the bigger cover and the dark theme icons are tested on a device. Tap, hold, the light theme icons and rounded buttons are not yet confirmed. Auto-pause does not work yet.</dd></div>
+    <div><dt>Game Boy games</dt><dd>Copy your own <code>.gb</code> or <code>.gbc</code> files to a <code>games</code> folder in the top level of the SD card. They appear in the launcher.</dd></div>
+    <div><dt>The name</dt><dd>Hiby Pro 2 is this project's name. Your player still shows HiBy R1 on its About screen and boot logo.</dd></div>
+  </dl>
 </section>
 
-<!-- Status -->
-<section class="status" id="status" aria-labelledby="status-title">
-  <h2 id="status-title" class="reveal">How well each part is tested</h2>
-  <div class="status-body reveal">
-    <table>
-      <thead><tr><th scope="col">Part</th><th scope="col">Status</th></tr></thead>
-      <tbody>
-        <tr><td>Swipe to change songs</td><td>Tested on a device</td></tr>
-        <tr><td>Taller cover and new Now Playing layout</td><td>Tested on a device</td></tr>
-        <tr><td>Icons in the dark theme</td><td>Tested on a device</td></tr>
-        <tr><td>Tap to pause, hold for lyrics</td><td>Included, not yet confirmed</td></tr>
-        <tr><td>Icons in the light theme</td><td>Included, not yet confirmed</td></tr>
-        <tr><td>Rounded dialog buttons</td><td>Included, not yet confirmed</td></tr>
-        <tr><td>Game Boy launcher</td><td>Kept unchanged from the base firmware</td></tr>
-        <tr><td>Auto-pause when nothing is connected</td><td class="bad">Known issue: does not pause yet</td></tr>
-      </tbody>
-    </table>
-    <figure class="tile shot"><img src="assets/dialog-confirm.png" width="480" height="800" loading="lazy" alt="Preview of the confirm dialog with rounded Cancel and OK buttons in the dark theme"></figure>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section class="faq" id="questions" aria-labelledby="faq-title">
-  <h2 id="faq-title" class="reveal">Questions and recovery</h2>
-  <div class="faq-list reveal">
-    <details name="faq" open>
-      <summary>Is this from HiBy?</summary>
-      <p>No. It is an independent hobby project, and HiBy does not make, support or endorse it. "Hiby Pro 2" is this project's name, not a HiBy product. Your player remains a HiBy R1.</p>
-    </details>
-    <details name="faq">
-      <summary>How do I go back to official firmware?</summary>
-      <p>Download the official R1 firmware from HiBy, put its file in the top folder of the SD card, and run the same update: from System, or from Firmware update (SD) in the launcher.</p>
-    </details>
-    <details name="faq">
-      <summary>What if the music player stops starting?</summary>
-      <p>The launcher starts separately from the player, so try Firmware update (SD) there with official firmware on the card. The add-on also turns itself off if the player dies early twice in a row.</p>
-    </details>
-    <details name="faq">
-      <summary>Why does my player still say HiBy R1?</summary>
-      <p>This build only uses the new name on this page. The About screen, Bluetooth name and boot logo still say HiBy R1, and the boot logo reads HIBY R1 PRO.</p>
-    </details>
-    <details name="faq">
-      <summary>Will it delete my music?</summary>
-      <p>The update replaces the firmware, not the files on your SD card. Keep your own backup anyway: nothing here is guaranteed, and the launcher's art and reset tools do delete things.</p>
-    </details>
-    <details name="faq">
-      <summary>Can I skip the launcher at startup?</summary>
-      <p>Yes, with a computer and ADB. Run <code>adb shell /usr/bin/gb-toggle.sh player</code> to start straight in the music player, and <code>gb-toggle.sh emu</code> to bring the launcher back.</p>
-    </details>
-    <details name="faq">
-      <summary>How do I turn off the auto-pause add-on?</summary>
-      <p>Auto-pause does not act yet, so it should not get in your way. To disable the whole add-on, run <code>adb shell touch /usr/data/queue_addon_off</code> and restart. The gestures are separate and stay on.</p>
-    </details>
-    <details name="faq">
-      <summary>Does it work on other HiBy players?</summary>
-      <p>No. It is built for the R1 only. Do not flash it on anything else.</p>
-    </details>
-  </div>
-</section>
-
-<!-- Close -->
-<section class="cta" id="download" aria-labelledby="cta-title">
-  <div class="flank" aria-hidden="true"><img src="assets/games.png" width="140" height="140" alt=""></div>
-  <div class="cta-main reveal">
-    <h2 id="cta-title">Get the firmware</h2>
-    <p>Version 1.0 for the HiBy R1, built on 1.8 b2. One file, 42.3 MB. By downloading you accept that you flash it at your own risk.</p>
-    <div class="cta-actions">
-      <a class="btn" href="https://github.com/GtAlex994/hiby-pro-2/releases/latest/download/r1.upt">Download r1.upt</a>
-      <a class="plain" href="https://github.com/GtAlex994/hiby-pro-2/issues">Report a problem</a>
-    </div>
-  </div>
-  <div class="flank field" aria-hidden="true"></div>
-</section>
 </main>
 
 <footer class="foot">
-  <p class="mark"><span style="--h:100%">Hiby</span><span style="--h:78%">Pro</span><span class="accent" style="--h:100%">2</span></p>
-  <div class="foot-cols">
-    <div>
-      <h2>Built on</h2>
-      <p><a href="https://github.com/bidhata/Hiby-R1-Mod">Hiby-R1-Mod by bidhata</a>, the modded base with the Game Boy launcher, and <a href="https://github.com/jgilchrist/gbemu">gbemu by jgilchrist</a>, the base of the emulator core.</p>
-    </div>
-    <div>
-      <h2>This project</h2>
-      <p><a href="https://github.com/GtAlex994/hiby-pro-2/releases">All releases</a><br><a href="https://github.com/GtAlex994/hiby-pro-2/issues">Issues</a></p>
-    </div>
-    <div class="legal">
-      <h2>Please note</h2>
-      <p>Unofficial community firmware, provided as is, with no warranty. You use it at your own risk. HiBy and R1 are trademarks of their owner. This project is not affiliated with HiBy, and the firmware includes HiBy's own software. Dialog images are previews. Typeface: General Sans.</p>
-    </div>
-  </div>
+  <p><a href="https://github.com/GtAlex994/hiby-pro-2/issues">Report a problem</a> &nbsp; <a href="https://github.com/GtAlex994/hiby-pro-2/releases">All releases</a></p>
+  <p>Based on <a href="https://github.com/bidhata/Hiby-R1-Mod/tree/main">Hiby-R1-Mod by bidhata</a>. Provided as is, with no warranty. Not made, supported or endorsed by HiBy, whose trademarks HiBy and R1 are. The firmware includes HiBy's own software.</p>
 </footer>
-<script src="main.js"></script>
 </body>
 </html>
